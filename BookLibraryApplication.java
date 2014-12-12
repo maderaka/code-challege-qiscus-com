@@ -310,12 +310,10 @@ class Member {
             book.setStock(book.getStock()-1);
             this.getBorrowedBooks().add(book);
         }
-        //To change body of generated methods, choose Tools | Templates.
     }
 
     public java.util.List<Book> listBorrowedBooks() {
         return this.getBorrowedBooks();
-        //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
