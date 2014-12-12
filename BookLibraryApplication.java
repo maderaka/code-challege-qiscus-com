@@ -177,17 +177,17 @@ class FictionBookLibrary {
         this.memberList = new java.util.ArrayList<>();
     }
     
-    void addCollection(Book book, int count) {
+    public void addCollection(Book book, int count) {
         book.setStock(book.getStock()+count);
         this.getBookList().add(book);
     }
 
-    java.util.List<Book> listAvailableBooks() {
+    public java.util.List<Book> listAvailableBooks() {
         
         return this.getBookList();
     }
 
-    java.util.List<Book> listBooksAuthoredBy(String author) {
+    public java.util.List<Book> listBooksAuthoredBy(String author) {
         java.util.List<Book>listBookByAuthor = new java.util.ArrayList<>();
         this.getBookList().stream().filter((book) -> (book.getAuthor().equals(author))).forEach((book) -> {
             listBookByAuthor.add(book);
@@ -195,7 +195,7 @@ class FictionBookLibrary {
         return listBookByAuthor;
     }
 
-    Member createMember(String name) {
+    public Member createMember(String name) {
         Member member = new Member();
         member.setName(name);
         
@@ -231,7 +231,7 @@ class FictionBookLibrary {
         this.memberList = memberList;
     }
     
-    public class MyArrayList extends java.util.ArrayList{
+    private class MyArrayList extends java.util.ArrayList{
         @Override
         public boolean contains(Object o){
             Book book = (Book) o;
